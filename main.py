@@ -1,4 +1,5 @@
 import argparse
+import json
 from api import current_weather
 from save import save_json,save_txt
 
@@ -14,11 +15,7 @@ def main():
 
         args = parser.parse_args()
 
-        result = current_weather(city=args.city)
-        
-        if not result or 'data' not in result or not result['data']:
-            print("Не удалось получить данные о погоде")
-            return
+        result = current_weather(city=args.city).json()
         
         data = result['data'][0]
         
