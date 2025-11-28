@@ -4,8 +4,9 @@ import json
 def save_json(data):
     
     with open("report.json","w",encoding="utf-8") as f:
-    
+        
         json.dump(data,f,ensure_ascii=False,indent=4)
+        
     
     
 def save_txt(data):
@@ -22,5 +23,4 @@ def save_txt(data):
     
     with open("report.txt","w",encoding="utf-8") as f:
     
-        f.write(text)
-                        
+        f.write(text)                

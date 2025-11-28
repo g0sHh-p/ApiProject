@@ -27,8 +27,7 @@ def current_weather(city : str):
         }
         
         response = requests.get("https://api.weatherbit.io/v2.0/current", params=params, timeout=10)
-        response.raise_for_status()  # Проверка HTTP статуса
-        return response.json()
+        return response
         
     
     except requests.exceptions.ConnectionError:
