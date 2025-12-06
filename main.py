@@ -1,10 +1,23 @@
 import argparse
 import json
-from api import current_weather
-from save import save_json,save_txt
+from .api import current_weather
+from .save import save_json
 
 
 def main():
+    """
+    Основная функция приложения.
+
+    Обрабатывает аргументы командной строки, получает данные о погоде
+    и либо выводит их в консоль, либо сохраняет в файлы.
+
+    Использование::
+        python main.py Москва              # Сохранить в файлы
+        python main.py Москва --cmd        # Вывести в консоль
+
+    :raises KeyboardInterrupt: При прерывании пользователем (Ctrl+C)
+    :raises Exception: При возникновении общих ошибок
+    """
     
     try:
         
